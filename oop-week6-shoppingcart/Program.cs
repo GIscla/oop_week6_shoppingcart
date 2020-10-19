@@ -12,23 +12,30 @@ namespace oop_week6_shoppingcart
     {
         static void Main(string[] args)
         {
+            double TotalCost(IFruits[] Fru)
+            {
+                double totpri = 0.0;
+                for (int i = 0; i < Fru.Length; i++)
+                {
+                    totpri += Fru[i].price;
+                }
+                return (totpri);
+            }
+
             Apple App1 = new Apple();
             Orange Ora = new Orange();
             Apple App2 = new Apple();
             Apple App3 = new Apple();
 
             IFruits[] checkout = new IFruits[4];
+            checkout[0] = App1;
+            checkout[1] = Ora;
+            checkout[2] = App2;
+            checkout[3] = App3;
 
-            double TotalCost(IFruits[] Fru)
-            {
-                double totpri = 0.0;
-                for (int i = 0; i < Fru.Length; i++)
-                {
-                    totpri += Fru[i].Getprice(); //I don't understand how to use the get here
-                }
-                return (totpri);
-            }
-            TotalCost(checkout);
+            Console.WriteLine(TotalCost(checkout));
+            Console.ReadLine();
+
         }
     }
 }

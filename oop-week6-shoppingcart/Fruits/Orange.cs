@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_week6_shoppingcart.Fruits
 {
-    class Orange
+    class Orange : IFruits
     {
         public double price { get; set; }
 
